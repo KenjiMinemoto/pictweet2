@@ -1,4 +1,7 @@
   Rails.application.routes.draw do
-    get   'tweets'      =>  'tweets#index'     #ツイート一覧画面
-    get   'tweets/new'  =>  'tweets#new'       #ツイート投稿画面
+  devise_for :users
+    root  'tweets#index'
+    get   'tweets'      =>  'tweets#index'
+    get   'tweets/new'  =>  'tweets#new'
+    post  '/tweets'     =>  'tweets#create'
   end

@@ -13,6 +13,9 @@ class TweetsController < ApplicationController
     Tweet.create(image: tweet_params[:image], text: tweet_params[:text], user_id: current_user.id)
   end
 
+  def destroy
+  end
+
   private
   def tweet_params
     params.permit(:image, :text)

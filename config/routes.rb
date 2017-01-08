@@ -5,5 +5,6 @@
     get   'tweets/new'  =>  'tweets#new'
     post  'tweets'      =>  'tweets#create'
     delete  'tweets/:id'  => 'tweets#destroy'
+    get   'tweets/:id/edit'  => 'tweets#edit'
     get   'users/:id'  =>  'users#show'
   end

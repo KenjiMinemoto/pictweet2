@@ -3,6 +3,7 @@
     root  'tweets#index'
     get   'tweets'      =>  'tweets#index'
     get   'tweets/new'  =>  'tweets#new'
-    post  '/tweets'     =>  'tweets#create'
-    get   'users/:id'   =>  'users#show'
+    post  'tweets'      =>  'tweets#create'
+    delete  'tweets/:id'  => 'tweets#destroy'
+    get   'users/:id'  =>  'users#show'
   end

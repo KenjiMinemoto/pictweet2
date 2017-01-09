@@ -28,6 +28,7 @@
       tweet = Tweet.find(params[:id])
       if tweet.user_id == current_user.id
         tweet.update(tweet_params)
+      end
     end
 
     private

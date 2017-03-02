@@ -1,0 +1,34 @@
+<%= form_tag('/tweets/search', method: :get) do %>
+   <input class="search__query" name="keyword" placeholder="ツイート検索" type="text" value=""><button class="btn-search" title="検索" type="submit"><i class="icon-search"></i></button></input>
+<% end %>
+<form accept-charset="utf-8" action="/" class="js-search-submit" method="get">
+</form>
+<article class="section">
+            <div class="container">
+              <ul class="listview js-lazy-load-images">
+                <% @tweets.each do |tweet| %>
+                <li>
+                  <a class="listview__element--right-icon" href="/tweets/<%= tweet.id %>/" title="<%= tweet.user.nickname %>">
+                    <div class="position-right p1em">
+                      <i class="icon-chevron-right color-sub"></i>
+                    </div>
+                    <div class="row no-space-bottom">
+                      <div class="col2">
+                        <div class="thumbnail thumbnail--movies">
+                          <div class="thumbnail__figure" style="background-image: url(<%= tweet.image %>);" title="<%= tweet.user.nickname %>"></div>
+                        </div>
+                      </div>
+                      <div class="col6 push6">
+                        <h3 class="text-middle text-break">
+                          <span class="color-sub"><%= tweet.text %></span>
+                        </h3>
+                      </div>
+                    </div>
+                  </a>
+                </li>
+                <% end %>
+              </ul>
+            </div>
+          </article>
+        </div>
+        <div id="yjSub">

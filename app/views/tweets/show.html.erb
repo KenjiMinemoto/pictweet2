@@ -1,4 +1,5 @@
-<div class ="contents row">
+<div class="contents row">
+<div class="block-content">
   <div class="content_post" style="background-image: url(<%= @tweet.image %>);">
     <% if user_signed_in? && current_user.id == @tweet.user_id %>
       <div class="more">
@@ -13,12 +14,8 @@
       </ul>
     </div>
     <% end %>
-    <%= simple_format(@tweet.text) %>
-    <span class="name">
-      <a href="/users/<%= @tweet.user.id %>">
-        <span>投稿者</span><%= @tweet.user.nickname %>
-      </a>
-    </span>
+  </div>
+  <%= simple_format(@tweet.text) %>
   </div>
   <div class="container">
     <% if current_user %>
@@ -32,7 +29,7 @@
       <% if @comments %>
         <% @comments.each do |comment| %>
           <p>
-            <strong><%= link_to comment.user.nickname, "/users/#{comment.user_id}" %>：</strong>
+            <strong><%= link_to comment.user.nickname, "/users/#{comment.user_id}" %></strong>
             <%= comment.text %>
           </p>
         <% end %>

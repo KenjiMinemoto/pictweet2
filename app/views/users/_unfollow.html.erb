@@ -1,0 +1,4 @@
+   <%= form_tag(controller: :relationships, action: :follow, method: :post ) do %>
+  <div><%= hidden_field_tag :following_id, @user.id %></div>
+  <%= submit_tag "UnFollow", class: "btn btn-primary" %>
+<% end %>

@@ -133,6 +133,7 @@ header.header {
       font-size: 20px;
       line-height: 41px;
       float: left;
+      width: 0px;
       a {
         display: block;
       }
@@ -187,6 +188,7 @@ header.header {
           display: block;
           padding: 10px 20px;
           text-align: left;
+          font-size: 15px;
           border-bottom: 1px solid #d8d8d8;
         }
       }
@@ -209,6 +211,10 @@ header.header {
     left: 0;
     right: 0;
   }
+}
+
+div.block-content {
+  background-color: #F8F8FF;
 }
 div.contents.row {
   h2 {
@@ -376,4 +382,17 @@ footer {
   p {
     text-align: center;
   }
+}
+
+.btn-search {
+  height: 30px;
+  width: 100px;
+  background-color: white;
+  margin: auto;
+  -webkit-transform: translateY(140%) translateX(-50%);
+}
+
+.search__query {
+  transform: translateY(-3%) translateX(60%);
+  width: 400px;
 }

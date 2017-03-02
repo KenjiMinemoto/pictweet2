@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Pictweet</title>
+    <title>Phototweet</title>
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => true %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
     <%= csrf_meta_tags %>
@@ -24,14 +24,16 @@
   <body>
    <header class="header">
     <div class="header__bar row">
-      <h1 class="grid-6"><a href="/">PicTweet</a></h1>
+      <h1 class="grid-6"><a href="/">Phototweet</a></h1>
       <% if user_signed_in? %>
         <div class="user_nav grid-6">
           <span><%= current_user.nickname %>
             <ul class="user__info">
               <li>
                 <a href="/users/<%= current_user.id %>">マイページ</a>
+                <%= link_to "ツイート検索", "/tweets/search/", method: :get %>
                 <%= link_to "ログアウト", destroy_user_session_path, method: :delete %>
+                <%= link_to "退会", "/users/#{current_user.id}", method: :delete %>
               </li>
             </ul>
           </span>
@@ -50,7 +52,7 @@
 
     <footer>
       <p>
-        Copyright PicTweet 2014.
+        Phototweet 2017.
       </p>
     </footer>
   </body>

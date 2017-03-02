@@ -36,6 +36,10 @@
       @comments = @tweet.comments.includes(:user)
     end
 
+    def search
+      @tweets = Tweet.where('text LIKE(?)', "%#{params[:keyword]}%")
+    end
+
     private
     def tweet_params
       params.permit(:image, :text)
